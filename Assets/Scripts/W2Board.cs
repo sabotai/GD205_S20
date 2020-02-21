@@ -52,9 +52,10 @@ public class W2Board : MonoBehaviour
             audPlayer.PlayOneShot(moveClip);
         }
 
-        for (int i = 0; i < hazard.Length; i++)
+        //use a loop to iterate through each position in the array, regardless of how many there are
+        for (int i = 0; i < hazard.Length; i++) //.Length refers to the number of positions
         {
-            if (hazard[i].position == player.transform.position)
+            if (hazard[i].position == player.transform.position) //if they are in the same position
             {
                 player.transform.position = initPos;
 
