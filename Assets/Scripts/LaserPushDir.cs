@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -24,8 +24,11 @@ public class LaserPushDir : MonoBehaviour
 
         	if (hit.rigidbody){
         		//Vector3 randomDirection = Random.insideUnitSphere;
-                Vector3 laserDir = laser.direction;
-        		hit.rigidbody.AddForceAtPosition(laserDir * boomForce, hit.point);
+                Vector3 laserDir = laser.direction; //use the direction of our ray
+
+                //use addforceatposition so its not in the same direction every time
+                //this will add torque and spin
+        		hit.rigidbody.AddForceAtPosition(laserDir * boomForce, hit.point); 
         	}
         }
 
